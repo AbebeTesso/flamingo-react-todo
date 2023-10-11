@@ -1,4 +1,5 @@
 import React from 'react'
+import TodoListItem from './TodoListItem';
 
 const todoList = [
   {title: "Code The Dream",
@@ -17,17 +18,17 @@ const todoList = [
 
 function TodoList() {
   return (
+    <> 
     <ul>
-        {todoList.map(function(item){
-          return <li key={item.id}>
-                    <a href={item.id}> {item.title}
-                    <span> {item.id} </span>
-                    <span> {item.lesson} </span>
-                    </a>
-                </li>
+        {todoList.map(function(todo){
+          return (
+         <TodoListItem
+          key={todo.id}
+          todo={todo}/> 
+          )
         })}
       </ul>
+    </>
   )
 }
-
 export default TodoList
