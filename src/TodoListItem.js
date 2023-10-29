@@ -1,13 +1,15 @@
 import React from 'react'
 
-function TodoListItem(props) {
+function TodoListItem({ todo }) {
   return (
+
         <li>
-            <a href={props.todo.id}> {props.todo.title}
-            <span> {props.todo.id} </span>
-            <span> {props.todo.lesson} </span>
+            <a href={todo.id}> {todo.title}
+            <span> {todo.id} </span>
+            <span> {todo.lesson} </span>
             </a>
         </li>
+        
     )
 }
 export default TodoListItem
