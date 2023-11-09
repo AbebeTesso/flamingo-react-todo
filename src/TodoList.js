@@ -1,19 +1,15 @@
-import React from 'react'
-import TodoListItem from './TodoListItem';
+import React from "react";
+import TodoListItem from "./TodoListItem";
 
 function TodoList({ todoList }) {
   return (
-    <> 
-    <ul>
+    <>
+      <ul>
         {todoList.map((todo) => {
-          return (
-         <TodoListItem
-          key={todo.id}
-          todo={todo}/> 
-          )
+          return <TodoListItem key={todo.id} todo={todo} />;
         })}
       </ul>
     </>
-  )
+  );
 }
-export default TodoList
+export default TodoList;
