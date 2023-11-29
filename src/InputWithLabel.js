@@ -19,7 +19,7 @@ function InputWithLabel({
 
   return (
     <>
-      <label htmlFor={id}>{children}</label>
+      <label htmlFor></label> 
       <input
         ref={inputRef}
         name={name}
@@ -28,7 +28,7 @@ function InputWithLabel({
         placeholder={placeholder}
         type={type}
         onChange={onInputChange}
-      ></input>
+      />
     </>
   );
 }
