@@ -19,11 +19,11 @@ function InputWithLabel({
 
   return (
     <>
-      <label htmlFor></label> 
+      <label htmlFor={id}>{children}</label>
       <input
+        id={id}
         ref={inputRef}
         name={name}
-        id={id}
         value={value}
         placeholder={placeholder}
         type={type}

@@ -30,7 +30,6 @@ function AddTodoForm({ onAddTodo }) {
         placeholder="Type new title here"
         onInputChange={handleTitleChange}
       >
-      
         <strong>Title</strong>
       </InputWithLabel>
       <button>Add</button>
