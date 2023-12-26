@@ -16,7 +16,6 @@ function InputWithLabel({
       inputRef.current.focus();
     }
   });
-
   return (
     <>
       <label htmlFor={id}>{children}</label>
