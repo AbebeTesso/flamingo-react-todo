@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import InputWithLabel from "./InputWithLabel";
+import myForm from "./AddTodoForm.module.css";
 
 function AddTodoForm({ onAddTodo }) {
   const [todoTitle, setTodoTitle] = useState("");
@@ -17,7 +18,7 @@ function AddTodoForm({ onAddTodo }) {
     setTodoTitle("");
   };
   return (
-    <form id="myForm" onSubmit={handleAddTodo}>
+    <form className={myForm.TodoForm} onSubmit={handleAddTodo}>
       <InputWithLabel
         autoFocus={true}
         name="title"
@@ -29,7 +30,7 @@ function AddTodoForm({ onAddTodo }) {
       >
         <strong>Title</strong>
       </InputWithLabel>
-      <button>Add</button>
+      <button className={myForm.Abtn}>Add</button>
     </form>
   );
 }
