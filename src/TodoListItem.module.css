@@ -1,0 +1,47 @@
+.ListItem {
+  background-color: #ece9e9;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  /* padding: 4px; */
+}
+
+li a {
+  text-decoration: none;
+}
+
+.btn {
+  color: red;
+  background-color: beige;
+}
+
+.btn:hover {
+  background-color: yellow;
+  color: black;
+}
+
+button {
+  border-radius: 5px;
+  padding: 6px;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: aquamarine;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1200px) {
+  body {
+    background-color: #2e3d49;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  body {
+    background-color: #02b3e4;
+  }
+}
