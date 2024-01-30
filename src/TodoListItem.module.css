@@ -27,21 +27,3 @@ button {
   border-radius: 5px;
   padding: 6px;
 }
-
-@media screen and (max-width: 500px) {
-  body {
-    background-color: aquamarine;
-  }
-}
-
-@media (min-width: 501px) and (max-width: 1200px) {
-  body {
-    background-color: #2e3d49;
-  }
-}
-
-@media screen and (min-width: 1201px) {
-  body {
-    background-color: #02b3e4;
-  }
-}
