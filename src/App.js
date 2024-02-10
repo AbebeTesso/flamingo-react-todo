@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./App.css"
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AddTodoForm from "./AddTodoForm";
-import TodoList from "./TodoList";
-import NavigationBar from "./NavigationBar";
+import AddTodoForm from "./components/AddTodoForm";
+import TodoList from "./components/TodoList";
+import NavigationBar from "./components/NavigationBar";
 
 function App() {
   const [todoList, setTodoList] = useState([]);
@@ -116,16 +116,16 @@ function App() {
         <Route
           path="/about"
           element={
-            <p>
+            <div>
               <NavigationBar />
-            </p>
+            </div>
           }
         />
         <Route
           path="/contact"
           target="_blank"
           element={
-            <p>
+            <div>
               <NavigationBar />
               <a
                 href="https://www.linkedin.com/abebe-tesso"
@@ -134,7 +134,7 @@ function App() {
               >
                 LinkedIn
               </a>
-            </p>
+            </div>
           }
         />
       </Routes>
