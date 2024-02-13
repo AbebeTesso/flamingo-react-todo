@@ -6,7 +6,11 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 16px;
-  /* padding: 4px; */
+  text-indent: 10px;
+}
+
+li {
+  margin: 20px;
 }
 
 li a {
