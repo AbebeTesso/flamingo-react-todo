@@ -36,10 +36,10 @@ InputWithLabel.propTypes = {
   id: PropTypes.string,
   inputRef: PropTypes.string,
   name: PropTypes.string,
-  value: PropTypes.string,
-  placeholder: PropTypes.string,
-  type: PropTypes.string,
-  autoFocus: PropTypes.any,
+  value: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  autoFocus: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func,
 };
 

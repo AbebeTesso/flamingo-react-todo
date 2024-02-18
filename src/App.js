@@ -4,11 +4,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AddTodoForm from "./components/AddTodoForm";
 import TodoList from "./components/TodoList";
 import NavigationBar from "./components/NavigationBar";
+import Footer from "./components/Footer";
 
 function App() {
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default`;
+  // ?view=Grid%20view&view=Grid%20view
+  // ?sort[0][field]=title&sort[0][direction]=desc
   useEffect(() => {
     async function fetchData() {
       const options = {
@@ -24,7 +27,17 @@ function App() {
           throw new Error(message);
         }
         const data = await response.json();
-        const todosMain = data.records.map((todo) => {
+
+        const sortTodo = data.records.sort((objectA, objectB) => {
+          if (objectA.fields.title < objectB.fields.title) {
+            return -1;
+          } else if (objectA.fields.title === objectB.fields.title) {
+            return 0;
+          } else {
+            return 1;
+          }
+        });
+        const todosMain = sortTodo.map((todo) => {
           const newTodo = {
             title: todo.fields.title,
             id: todo.id,
@@ -71,11 +84,33 @@ function App() {
       console.log(error.message);
     }
   };
+  const removeTodoList = async (id) => {
+    const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default/${id}`;
+    const options = {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+    };
+    try {
+      const response = await fetch(url, options);
+      if (!response.ok) {
+        const message = `Error has occured: ${response.status}`;
+        throw new Error(message);
+      }
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   const addTodo = async (newTodo) => {
     const newPost = await postTodoList(newTodo);
     setTodoList((prevTodoList) => [...prevTodoList, newPost]);
   };
   const removeTodo = (id) => {
+    removeTodoList(id);
     const newTodoList = todoList.filter((item) => item.id !== id);
     setTodoList(newTodoList);
   };
@@ -138,8 +173,8 @@ function App() {
           }
         />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
-
 export default App;

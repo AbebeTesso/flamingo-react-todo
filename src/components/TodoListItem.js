@@ -7,7 +7,7 @@ function TodoListItem({ todo: { title, id }, onRemoveTodo }) {
     <li className={style.ListItem}>
       <a href={id}>
         {title}
-        <span> {id} </span>
+        {/* <span> {id} </span> */}
       </a>
       <button
         className={style.btn}
