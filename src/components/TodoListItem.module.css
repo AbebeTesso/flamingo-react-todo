@@ -9,8 +9,15 @@
   text-indent: 10px;
 }
 
+ul {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+
 li {
   margin: 20px;
+  border-radius: 8px;
+  font-size: medium;
 }
 
 li a {
@@ -18,13 +25,15 @@ li a {
 }
 
 .btn {
-  color: red;
+  color: black;
   background-color: beige;
+  box-sizing: initial;
+  margin-right: 1px;
 }
 
 .btn:hover {
   background-color: yellow;
-  color: black;
+  color: red;
 }
 
 button {

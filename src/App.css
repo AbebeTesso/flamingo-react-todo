@@ -12,18 +12,22 @@ input {
 
 @media screen and (max-width: 500px) {
   body {
-    background-color: aquamarine;
+    background-color: #999;
   }
 }
 
 @media (min-width: 501px) and (max-width: 1200px) {
   body {
-    background-color: #2e3d49;
+    background-color: burlywood;
+  }
+
+  h1 {
+    color: purple;
   }
 }
 
 @media screen and (min-width: 1201px) {
   body {
-    background-color: #02b3e4;
+    background-color: #ffff;
   }
 }

@@ -10,8 +10,6 @@ function App() {
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default`;
-  // ?view=Grid%20view&view=Grid%20view
-  // ?sort[0][field]=title&sort[0][direction]=desc
   useEffect(() => {
     async function fetchData() {
       const options = {
