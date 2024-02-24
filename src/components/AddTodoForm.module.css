@@ -7,9 +7,9 @@
 
 h1 {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 30px;
-  padding-top: 30px;
+  padding-top: 10px;
   background-color: darkgray !important;
 }
 
@@ -26,15 +26,16 @@ strong {
   padding: 7.5px;
   margin: 4px;
 }
+
 .Abtn:hover {
   background-color: bisque;
   color: black;
 }
+
 @media screen and (max-width: 501px) {
   h1 {
     margin-top: 30px;
     text-align: center;
-    margin-top: 50px;
-    background-color: white !important;
+    color: orange;
   }
 }

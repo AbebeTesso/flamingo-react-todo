@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./TodoListItem.module.css";
 import PropTypes from "prop-types";
+import { MdDelete } from "react-icons/md";
 
 function TodoListItem({ todo: { title, id }, onRemoveTodo }) {
   return (
@@ -14,7 +15,7 @@ function TodoListItem({ todo: { title, id }, onRemoveTodo }) {
         type="button"
         onClick={() => onRemoveTodo(id)}
       >
-        Remove
+      <MdDelete />
       </button>
     </li>
   );

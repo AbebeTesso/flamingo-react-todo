@@ -6,7 +6,7 @@ function Footer() {
   const year = today.getFullYear();
   return (
     <footer className={style.ft}>
-      <h4>Prepared by Abebe T Copywrite © {year}</h4>
+      <h4>Copywrite © {year} Prepared by Abebe T </h4>
     </footer>
   );
 }
